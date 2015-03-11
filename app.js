@@ -61,7 +61,7 @@
 		var dataPusher = setInterval(function () {
 			var data = stockWatch.generateStocks();
 			socket.volatile.emit('stocks', {data:data});
-		}, 3000);
+		}, 1000);
 		socket.on('disconnect', function () {
 			console.log('closing...');
 			// ???
