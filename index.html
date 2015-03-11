@@ -5,12 +5,13 @@
 	<title>...</title>
 	<script src="public/angular/angular.min.js"></script>
 	<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
-	<script src="js/stock.service.js"></script>
+	<script src="public/stock.service.js"></script>
 	<script>
 		var socket = io.connect();
 		socket.on('stocks', function (data) {
 			var exchange = document.getElementById('exchange');
 			var scope = angular.element(exchange).scope();
+			console.log(scope);
 			scope.update(data);
 			scope.$apply();
 		});
