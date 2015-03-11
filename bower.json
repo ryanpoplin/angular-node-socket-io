@@ -1,0 +1,27 @@
+{
+  "name": "angular-node-socket-io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ryanpoplin/angular-node-socket-io",
+  "authors": [
+    "Byrdann Fox <mobileupstate@gmail.com>"
+  ],
+  "description": "...",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "..."
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.14"
+  }
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="StockService">
+<head>
+	<meta charset="utf-8">
+	<title>...</title>
+	<script src="public/angular/angular.min.js"></script>
+	<script src="node_modules/socket.io/node_modules/socket.io-client/socket.io.js"></script>
+	<script src="js/stock.service.js"></script>
+	<script>
+		var socket = io.connect();
+		socket.on('stocks', function (data) {
+			var exchange = document.getElementById('exchange');
+			var scope = angular.element(exchange).scope();
+			scope.update(data);
+			scope.$apply();
+		});
+	</script>
+</head>
+<body ng-controller="CoreController">
+	<div id="exchange">
+		<table>
+			<thead>
+				<tr>
+					<th>Exchange</th>
+					<th>Value</th>
+					<th>Status</th>
+				</tr>
+			</thead>
+			<tbody ng-repeat="exchange in exchanges">
+				<tr>
+					<td>{{ exchange.name }}</td>
+					<td>{{ exchange.value | number:2 }}</td>
+					<td>{{ exchange.status }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

@@ -1,4 +1,4 @@
-(function () {
+// (function () {
 
 	'use strict';
 
@@ -14,9 +14,9 @@
 
 		var filePath = '.' + req.url;
 
-		if (filePath === './') {
-			filePath = './index.html';
-		}
+		// if (filePath === './') {
+			filePath = '../index.html';
+		// }
 
 		var extname = path.extname(filePath);
 
@@ -29,7 +29,6 @@
 			case '.css':
 				contentType = 'text/css';
 				break;
-			// default:...
 		}
 
 		fs.exists(filePath, function (exists) {
@@ -55,7 +54,7 @@
 
 	});
 
-	gw_srv = require('socket.io').listen(srv);
+	var gw_srv = require('socket.io').listen(srv);
 	srv.listen(port);
 	console.log('Server running at http://127.0.0.1:' + port + '/');
 	gw_srv.sockets.on('connection', function (socket) {
@@ -70,4 +69,4 @@
 		});
 	});
 
-}());
+// }());

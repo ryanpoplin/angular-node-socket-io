@@ -1,4 +1,4 @@
-(function () {
+// (function () {
 
 	'use strict';
 
@@ -24,7 +24,7 @@
 
 		} else {
 
-			for (var i = 0; i < stocks.length: i += 1) {
+			for (var i = 0; i < stocks.length; i += 1) {
 				var val = Math.random() * 80.24;
 				var plusMinus = Math.random() < 0.5 ? -1 : 1;
 				stocks[i]['value'] += val * plusMinus;
@@ -35,10 +35,12 @@
 				}
 			}
 
+			console.log(stocks);
+
 			return stocks;
 
 		}
 
 	};
 
-}());
+// }());
